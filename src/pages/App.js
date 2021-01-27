@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import styles from "./App.module.scss";
 import { Link, Route, withRouter } from "react-router-dom";
 import HomePage from "./HomePage";
-import WorkPage from "./WorkPage";
-import WorkPageDetail from "./WorkPageDetail";
+import MenuPage from "./MenuPage";
+import MenuPageDetail from "./MenuPageDetail";
 
 class App extends Component {
   render() {
@@ -24,13 +24,13 @@ class App extends Component {
                   HOME
                 </p>
               </Link>
-              <Link to="/works">
+              <Link to="/menu">
                 <p
                   className={
-                    location.pathname === "/works" ? styles.selected : null
+                    location.pathname === "/menu" ? styles.selected : null
                   }
                 >
-                  WORKS
+                  MENU
                 </p>
               </Link>
             </div>
@@ -40,8 +40,8 @@ class App extends Component {
         {/* 内容区 */}
         <section className={styles.content}>
           <Route path="/" exact component={HomePage} />
-          <Route path="/works" exact component={WorkPage} />
-          <Route path="/works/:id" exact component={WorkPageDetail} />
+          <Route path="/menu" exact component={MenuPage} />
+          <Route path="/menu/:id" exact component={MenuPageDetail} />
         </section>
 
         {/* 底部 */}
