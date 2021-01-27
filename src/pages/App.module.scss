@@ -27,10 +27,11 @@
       }
       .boxleft{
         font-size: 20px;
-        color: rgb(51, 51, 51);
+        // color: rgb(51, 51, 51);
+        color: 	#9F5000;
       }
       .boxleft::after {
-        content: "◦◦◦";
+        // content: "◦◦◦";
         margin-left: 0.5em;
       }
       .boxright{

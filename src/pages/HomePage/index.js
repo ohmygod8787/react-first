@@ -1,34 +1,35 @@
+import React, { Component } from "react";
+import styles from "./home.module.scss";
+import WorkLists from "../../components/WorkLists";
+import worksData from "../works.json";
 
-import React, { Component } from 'react';
-import styles from './home.module.scss';
-import WorkLists from '../../components/WorkLists';
-import worksData from '../works.json';
+export default () => {
+  return (
+    <div className={styles.wrap}>
+      {/* 个人简介 */}
+      <section className={styles.brief}>
+        <img src={require("../../assets/images/avatar.jpg")} />
+        <h2>我們•溫暖你生活的每一天</h2>
+        <ul>
+          <li>American coffee</li>
+          <li>Hand shake beverages</li>
+          <li>Birthday cake</li>
+        </ul>
+        <p>
+          從原產地的一株咖啡樹，最終成為您手中的一杯咖啡；我們堅持採購並且烘焙最高品質的咖啡，這是我們一直努力的基本原則；最初的十英呎到最後十英呎的珍貴體驗，為咖啡的故事做了最佳的註解，同時也塑造出咖啡家族的獨特風味及口感特性，閱讀咖啡的故事，可以讓您更瞭解咖啡，豐富您的咖啡體驗。
+        </p>
+        <p>The relentless pursuit of perfection,take time to indulge!</p>
+        <p>Contact me at loremipsum@gmail.com</p>
+      </section>
 
-export default () =>{
-    return <div className={ styles.wrap }>
-        
-        {/* 个人简介 */}
-        <section className={ styles.brief }>
-            <img src={ require("../../assets/images/avatar.jpg") } />
-            <h2>Thijs Koerselman</h2>
-            <ul>
-                <li>software engineer</li>
-                <li>full-stack developer</li>
-                <li>sound designer</li>
-            </ul>
-            <p>I design applications, interactive systems and websites. I love using technology in creative contexts.</p>
-            <p>I am a freelancer based in Utrecht, the Netherlands.</p>
-            <p>Contact me at thijs@vauxlab.com</p>
-        </section>  
-
-        {/* 作品列表 */}
-        <section className={ styles.work }>
-            <div className={ styles.title }>
-                <h3>A selection of work</h3>
-                <p>You can find more in the work overview.</p>
-            </div>
-            <WorkLists dataSource = { worksData.data } />
-        </section>
-
+      {/* 作品列表 */}
+      <section className={styles.work}>
+        <div className={styles.title}>
+          <h3>Menu Template</h3>
+          <p>1/27~2/28慶祝Lorem Ipsum開幕咖啡半價</p>
+        </div>
+        <WorkLists dataSource={worksData.data} />
+      </section>
     </div>
-}
+  );
+};
