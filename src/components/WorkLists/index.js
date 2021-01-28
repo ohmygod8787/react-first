@@ -1,8 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import styles from "./work.module.scss";
 import { Link } from "react-router-dom";
 
 export default ({ dataSource }) => {
+  const [isHover, setHover] = useState(false);
+  // console.log(isHover);
   return (
     <div className={styles.worklist}>
       <ul>
@@ -18,7 +20,15 @@ export default ({ dataSource }) => {
                   <p>{item.brief}</p>
                   <div className={styles.tag}>
                     {item.tags &&
-                      item.tags.map((i) => <span key={i}>{i}</span>)}
+                      item.tags.map((i) => (
+                        <span
+                          key={i}
+                          onMouseOver={() => setHover(true)}
+                          onMouseOut={() => setHover(false)}
+                        >
+                          {i}
+                        </span>
+                      ))}
                   </div>
                 </div>
               </Link>
