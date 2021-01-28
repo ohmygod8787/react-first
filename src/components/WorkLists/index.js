@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 export default ({ dataSource }) => {
   const [isHover, setHover] = useState(false);
-  // console.log(isHover);
+  let self = this;
+  console.log(self);
   return (
     <div className={styles.worklist}>
       <ul>
@@ -23,6 +24,7 @@ export default ({ dataSource }) => {
                       item.tags.map((i) => (
                         <span
                           key={i}
+                          className={isHover == true ? "active" : null}
                           onMouseOver={() => setHover(true)}
                           onMouseOut={() => setHover(false)}
                         >
